@@ -28,27 +28,45 @@ getData()
 
 
 const saveUser = () => {
-    const name = $('#name').val()
-    const image = $('#image').val()
-    //iniciamos una petición ajax con jquery
-    $.ajax({
-        method: "POST",//método de la petición
-        url: `https://ajaxclass-1ca34.firebaseio.com/11g/silvi/users/.json`,//destino
-        data: JSON.stringify({image:image, name: name }),//lo que vamos a enviar
-        success: response => {//qué haremos cuando la petición sea exitosa
-            console.log(response)
-            alert('usuario creado')
-            const url = "index.html";    
-            $(location).attr('href',url);
-            //cada que guardemos un post, volvemos a traer la colección y la 
-            //mostramos en la UI
-        },
-        error: error => { //qué hacemos si hay error
-            console.log(error)
-            //alert(error.responseJSON.error)
-            error.status === 400 && alert("debes parsear el objeto ")
-        }
-    })
+    if (validaForm() == true){
+        const name = $('#name').val()
+        const image = $('#image').val()
+        //iniciamos una petición ajax con jquery
+        $.ajax({
+            method: "POST",//método de la petición
+            url: `https://ajaxclass-1ca34.firebaseio.com/11g/silvi/users/.json`,//destino
+            data: JSON.stringify({image:image, name: name }),//lo que vamos a enviar
+            success: response => {//qué haremos cuando la petición sea exitosa
+                console.log(response)
+                alert('usuario creado')
+                const url = "index.html";    
+                $(location).attr('href',url);
+                //cada que guardemos un post, volvemos a traer la colección y la 
+                //mostramos en la UI
+            },
+            error: error => { //qué hacemos si hay error
+                console.log(error)
+                //alert(error.responseJSON.error)
+                error.status === 400 && alert("debes parsear el objeto ")
+            }
+        })
+    }
+    
 }
 
 $('#save-user').click(saveUser)
+
+function validaForm(){
+    // Campos de texto
+    if($("#name").val() == ""){
+        alert("El campo Título no puede estar vacío.");
+        $("#name").focus();       // Esta función coloca el foco de escritura del usuario en el campo Nombre directamente.
+        return false;
+    }
+    if($("#image").val() == ""){
+        alert("El campo Content no puede estar vacío.");
+        $("#image").focus();
+        return false;
+    }
+    return true; // Si todo está correcto
+}
