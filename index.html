@@ -13,7 +13,7 @@
 </head>
 <body class="bg-dark">
 
-    <nav class="navbar navbar-expand-lg navbar-primary bg-primary text-light">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-light text-light">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,72 +33,58 @@
     <div class="container">
         <div class="row">
             <div id="pets-wrapper" class="col-12">
-                <div class="card-deck">
-                    <div class="card  text-white bg-secondary mb-3">
-                      <img class="card-img-top" src="assets/images/gatita-ocicat.jpeg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card text-white bg-secondary mb-3">
-                      <img class="card-img-top" src="assets/images/gata-siamesa.jpeg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card text-white bg-secondary mb-3">
-                      <img class="card-img-top" src="assets/images/gata-negra.jpeg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-deck">
-                    <div class="card  text-white bg-secondary mb-3">
-                      <img class="card-img-top" src="assets/images/gatito-amarillo.jpeg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card  text-white bg-secondary mb-3">
-                      <img class="card-img-top" src="assets/images/gatito-b&n.jpeg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                    <div class="card  text-white bg-secondary mb-3">
-                      <img class="card-img-top" src="assets/images/gatito-gris-b.jpeg" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                      </div>
-                    </div>
-                  </div>
+                <div class="card-deck"></div>
             </div>
         </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <form class="needs-validation col-12 text-light mt-3" novalidate>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationTooltip01">Nombre Owner:</label>
+              <input type="text" class="form-control" id="validationTooltip01" value="Mark" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="validationTooltip02">Nombre Mascota:</label>
+              <input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
+              <div class="valid-tooltip">
+                Looks good!
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationTooltip03">Tipo</label>
+              <input type="text" class="form-control" id="validationTooltip03" required>
+              <div class="invalid-tooltip">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationTooltip04">En adopción:</label>
+              <select class="custom-select" id="validationTooltip04" required>
+                <option selected disabled value="si/no">SI</option>
+                <option>...</option>
+              </select>
+              <div class="invalid-tooltip">
+                Please select a valid state.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationTooltip05">Zip</label>
+              <input type="text" class="form-control" id="validationTooltip05" required>
+              <div class="invalid-tooltip">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Guardar</button>
+        </form>
+      </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
